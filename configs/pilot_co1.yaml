@@ -1,0 +1,76 @@
+models:
+  hgnn:
+    lilim: models/lilim_hgnn.pt
+    hdarp: models/hdarp_hgnn.pt
+  homgnn:
+    lilim: models/lilim_homgnn.pt
+    hdarp: models/hdarp_homgnn.pt
+tune:
+  B1_alns: &id003
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+  P_hgnn: &id001
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 0.2
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.2
+  C_copred: *id001
+  C_self: *id001
+  O_oracle: &id002
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 0.2
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.2
+  O_ref1: *id002
+  O_ref06: *id002
+  REF_long: *id003
+  REF_x1: *id003
+  REF_x06: *id003
+blocks:
+- name: co_lilim
+  instances:
+  - family: gen-lilim
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_lilim.json
+  diag: true
+  algorithms: &id004
+    P_hgnn: 2
+    C_copred: 2
+    C_self: 2
+    REF_long: 1
+    REF_x1: 1
+    REF_x06: 1
+- name: co_hdarp
+  instances:
+  - family: gen-hdarp
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_hdarp.json
+  diag: true
+  algorithms: *id004

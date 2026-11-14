@@ -1,0 +1,162 @@
+{
+"valopt_00019": {
+"B1_alns@xi0.2_eta0.0": 5520,
+"B1_alns@xi0.2_eta0.025": 5864,
+"B1_alns@xi0.4_eta0.025": 3895,
+"B1_alns@xi0.2_eta0.05": 3549,
+"B1_alns@xi0.4_eta0.0": 2207,
+"B1_alns@xi0.4_eta0.05": 3911
+},
+"valopt_00011": {
+"B1_alns@xi0.4_eta0.0": 1643,
+"B1_alns@xi0.4_eta0.05": 1729,
+"B1_alns@xi0.4_eta0.025": 2773,
+"B1_alns@xi0.2_eta0.05": 3151,
+"B1_alns@xi0.2_eta0.0": 3295,
+"B1_alns@xi0.2_eta0.025": 5022
+},
+"valopt_00001": {
+"B1_alns@xi0.4_eta0.05": 573,
+"B1_alns@xi0.2_eta0.025": 1329,
+"B1_alns@xi0.4_eta0.0": 649,
+"B1_alns@xi0.2_eta0.05": 1168,
+"B1_alns@xi0.2_eta0.0": 1403,
+"B1_alns@xi0.4_eta0.025": 614
+},
+"valopt_00004": {
+"B1_alns@xi0.4_eta0.05": 1527,
+"B1_alns@xi0.2_eta0.025": 5459,
+"B1_alns@xi0.4_eta0.0": 2731,
+"B1_alns@xi0.2_eta0.05": 3134,
+"B1_alns@xi0.4_eta0.025": 1588,
+"B1_alns@xi0.2_eta0.0": 3935
+},
+"valopt_00010": {
+"B1_alns@xi0.2_eta0.0": 1426,
+"B1_alns@xi0.4_eta0.025": 769,
+"B1_alns@xi0.2_eta0.025": 1582,
+"B1_alns@xi0.2_eta0.05": 1363,
+"B1_alns@xi0.4_eta0.05": 656,
+"B1_alns@xi0.4_eta0.0": 916
+},
+"valopt_00008": {
+"B1_alns@xi0.2_eta0.0": 3627,
+"B1_alns@xi0.4_eta0.05": 2866,
+"B1_alns@xi0.2_eta0.025": 4414,
+"B1_alns@xi0.4_eta0.025": 1901,
+"B1_alns@xi0.4_eta0.0": 2110,
+"B1_alns@xi0.2_eta0.05": 3498
+},
+"valopt_00018": {
+"B1_alns@xi0.2_eta0.05": 3775,
+"B1_alns@xi0.2_eta0.0": 3261,
+"B1_alns@xi0.2_eta0.025": 4949,
+"B1_alns@xi0.4_eta0.025": 1635,
+"B1_alns@xi0.4_eta0.05": 1708,
+"B1_alns@xi0.4_eta0.0": 1843
+},
+"valopt_00012": {
+"B1_alns@xi0.2_eta0.0": 7638,
+"B1_alns@xi0.4_eta0.025": 4505,
+"B1_alns@xi0.2_eta0.05": 7863,
+"B1_alns@xi0.2_eta0.025": 7447,
+"B1_alns@xi0.4_eta0.05": 4628,
+"B1_alns@xi0.4_eta0.0": 3250
+},
+"valopt_00014": {
+"B1_alns@xi0.4_eta0.025": 4434,
+"B1_alns@xi0.2_eta0.05": 3797,
+"B1_alns@xi0.4_eta0.0": 3857,
+"B1_alns@xi0.2_eta0.0": 7457,
+"B1_alns@xi0.2_eta0.025": 6093,
+"B1_alns@xi0.4_eta0.05": 2319
+},
+"valopt_00015": {
+"B1_alns@xi0.2_eta0.05": 4015,
+"B1_alns@xi0.2_eta0.0": 4706,
+"B1_alns@xi0.4_eta0.025": 1298,
+"B1_alns@xi0.4_eta0.0": 1571,
+"B1_alns@xi0.2_eta0.025": 4807,
+"B1_alns@xi0.4_eta0.05": 2213
+},
+"valopt_00007": {
+"B1_alns@xi0.2_eta0.025": 2565,
+"B1_alns@xi0.2_eta0.05": 3280,
+"B1_alns@xi0.4_eta0.0": 2151,
+"B1_alns@xi0.2_eta0.0": 2293,
+"B1_alns@xi0.4_eta0.05": 1335,
+"B1_alns@xi0.4_eta0.025": 1376
+},
+"valopt_00006": {
+"B1_alns@xi0.2_eta0.0": 2914,
+"B1_alns@xi0.2_eta0.025": 2843,
+"B1_alns@xi0.4_eta0.05": 1949,
+"B1_alns@xi0.4_eta0.025": 1983,
+"B1_alns@xi0.2_eta0.05": 4402,
+"B1_alns@xi0.4_eta0.0": 1950
+},
+"valopt_00003": {
+"B1_alns@xi0.2_eta0.0": 2771,
+"B1_alns@xi0.4_eta0.025": 2235,
+"B1_alns@xi0.4_eta0.0": 1431,
+"B1_alns@xi0.2_eta0.025": 2706,
+"B1_alns@xi0.4_eta0.05": 2241,
+"B1_alns@xi0.2_eta0.05": 4996
+},
+"valopt_00016": {
+"B1_alns@xi0.2_eta0.0": 4887,
+"B1_alns@xi0.4_eta0.025": 2462,
+"B1_alns@xi0.4_eta0.05": 1374,
+"B1_alns@xi0.2_eta0.05": 2575,
+"B1_alns@xi0.2_eta0.025": 4689,
+"B1_alns@xi0.4_eta0.0": 2352
+},
+"valopt_00013": {
+"B1_alns@xi0.2_eta0.025": 7490,
+"B1_alns@xi0.2_eta0.0": 4155,
+"B1_alns@xi0.4_eta0.0": 4042,
+"B1_alns@xi0.2_eta0.05": 7762,
+"B1_alns@xi0.4_eta0.05": 3508,
+"B1_alns@xi0.4_eta0.025": 2495
+},
+"valopt_00017": {
+"B1_alns@xi0.2_eta0.05": 2723,
+"B1_alns@xi0.2_eta0.0": 2804,
+"B1_alns@xi0.4_eta0.025": 1559,
+"B1_alns@xi0.2_eta0.025": 1873,
+"B1_alns@xi0.4_eta0.05": 1811,
+"B1_alns@xi0.4_eta0.0": 1292
+},
+"valopt_00002": {
+"B1_alns@xi0.2_eta0.05": 3144,
+"B1_alns@xi0.4_eta0.05": 1333,
+"B1_alns@xi0.4_eta0.025": 2446,
+"B1_alns@xi0.4_eta0.0": 2798,
+"B1_alns@xi0.2_eta0.025": 4664,
+"B1_alns@xi0.2_eta0.0": 5110
+},
+"valopt_00009": {
+"B1_alns@xi0.4_eta0.0": 1650,
+"B1_alns@xi0.2_eta0.05": 3088,
+"B1_alns@xi0.4_eta0.025": 1652,
+"B1_alns@xi0.2_eta0.025": 2474,
+"B1_alns@xi0.4_eta0.05": 2155,
+"B1_alns@xi0.2_eta0.0": 3800
+},
+"valopt_00005": {
+"B1_alns@xi0.4_eta0.05": 1296,
+"B1_alns@xi0.2_eta0.05": 4675,
+"B1_alns@xi0.4_eta0.025": 2056,
+"B1_alns@xi0.2_eta0.025": 2605,
+"B1_alns@xi0.4_eta0.0": 1736,
+"B1_alns@xi0.2_eta0.0": 4845
+},
+"valopt_00000": {
+"B1_alns@xi0.4_eta0.025": 2063,
+"B1_alns@xi0.2_eta0.0": 2326,
+"B1_alns@xi0.2_eta0.05": 2198,
+"B1_alns@xi0.4_eta0.0": 1566,
+"B1_alns@xi0.2_eta0.025": 2201,
+"B1_alns@xi0.4_eta0.05": 2355
+}
+}

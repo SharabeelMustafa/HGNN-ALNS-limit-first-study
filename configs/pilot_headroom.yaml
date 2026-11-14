@@ -1,0 +1,46 @@
+models: {}
+tune:
+  B1_alns: &id001
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+  S_best2: *id001
+  S_best4: *id001
+  W_best2: *id001
+  W_best4: *id001
+  W_best8: *id001
+blocks:
+- name: headroom_lilim
+  instances:
+  - family: gen-lilim
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_lilim.json
+  diag: true
+  algorithms:
+    B1_alns: 2
+    S_best2: 2
+    S_best4: 2
+    W_best2: 2
+    W_best4: 2
+    W_best8: 2
+- name: headroom_hdarp
+  instances:
+  - family: gen-hdarp
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_hdarp.json
+  diag: true
+  algorithms:
+    B1_alns: 2
+    S_best2: 2
+    S_best4: 2
+    W_best2: 2
+    W_best4: 2
+    W_best8: 2

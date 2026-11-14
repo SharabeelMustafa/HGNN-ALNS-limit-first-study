@@ -1,0 +1,120 @@
+models:
+  hgnn:
+    lilim: models/lilim_hgnn.pt
+    hdarp: models/hdarp_hgnn.pt
+  homgnn:
+    lilim: models/lilim_homgnn.pt
+    hdarp: models/hdarp_homgnn.pt
+tune:
+  B1_alns:
+    by_family:
+      lilim: &id001
+        xi: 0.4
+        noise: 0.025
+      hdarp: &id002
+        xi: 0.2
+        noise: 0.0
+  B2_alns_uniform:
+    by_family:
+      lilim: *id001
+      hdarp: *id002
+  A_ALNS3_rrt:
+    by_family:
+      lilim: *id001
+      hdarp: *id002
+  A_ALNS4_itersa:
+    by_family:
+      lilim: *id001
+      hdarp: *id002
+  P_hgnn:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide: &id003
+          K: 0.5
+          lam: 0.2
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide: &id004
+          K: 999
+          lam: 0.2
+  A_INT3_noGNNdestroy:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide: *id003
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide: *id004
+  B5_homgnn:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide: *id003
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide: *id004
+  A_INT1_prune:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 0.0
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.0
+  A_INT2_prior:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 0.2
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.2
+blocks:
+- name: main
+  instances:
+  - family: lilim
+    size: 100
+  - family: lilim
+    size: 200
+  - family: malheiros
+  budgets:
+  - 0.5n
+  algorithms:
+    B0_regret2: 1
+    B1_alns: 10
+    P_hgnn: 10
+    A_INT1_prune: 5
+    A_INT2_prior: 5
+    B5_homgnn: 5
+- name: deadline
+  instances:
+  - family: lilim
+    size: 100
+  - family: lilim
+    size: 200
+  - family: malheiros
+  budgets:
+  - 10
+  - 20
+  algorithms:
+    B1_alns: 5
+    P_hgnn: 5

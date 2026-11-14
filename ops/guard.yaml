@@ -1,0 +1,28 @@
+# Resource and thermal limits for the research runner (ops/researchd.py).
+# Measured on 2026-11-13: with 12 workers the CPU settles at 75-80 C after a turbo burst of about 40 s (90-92 C).
+# With only 2-6 workers each core runs at full turbo and the hottest core stays at 87-90 C. So fewer workers are NOT
+# cooler on this CPU; the thermostat therefore only acts close to the pause limit.
+# Hardware: Intel i7-12700H (14 cores / 20 threads, maximum junction temperature 100 C),
+#           NVIDIA RTX 3070 Laptop GPU 8 GB (shutdown temperature 101 C), 32 GB RAM.
+cpu_hard_c: 96           # pause when the hottest core is at or above this for `hot_checks` readings (4 C below the CPU limit of 100 C)
+cpu_pause_c: 92          # pause when it stays at or above this for `sustain_checks` readings (the CPU's own turbo burst at the
+                         # start of a load reaches about 90 C for up to a minute; that alone is not a reason to pause)
+sustain_checks: 9
+cpu_resume_c: 70         # continue only when it is back below this
+gpu_pause_c: 78          # pause at once when the GPU reaches this (23 C below its shutdown temperature)
+gpu_resume_c: 62
+start_workers: 12        # thermostat: a job starts with this many active workers
+cpu_soft_c: 91           # thermostat: at or above this, one more worker is held back
+cpu_release_c: 86        # thermostat: at or below this, one held worker is released
+min_workers: 2           # the thermostat never goes below this many active workers
+hot_checks: 3            # consecutive readings (poll_seconds apart) at or above cpu_hard_c before a pause
+poll_seconds: 10
+cooldown_min_seconds: 120
+max_workers: 12          # CPU worker processes for experiments (of 20 threads = 60 %)
+min_free_ram_gb: 4       # pause when less RAM than this is available
+min_free_disk_gb: 20     # do not start a job with less free disk space than this
+on_battery: pause        # pause = stop the job and wait for the charger; run = keep going
+rest_every_min: 90       # after this many minutes of continuous load ...
+rest_min: 3              # ... rest for this many minutes (0 = never)
+max_attempts: 3          # a job that fails this many times is marked failed and skipped
+burst_grace_s: 90        # the thermostat makes no decision in the first seconds after a start or resume

@@ -1,0 +1,8 @@
+# Baseline-only sanity run (no models needed)
+blocks:
+  - name: sanity
+    instances:
+      - {family: lilim, size: 100, names: [lc101, lr104, lrc105]}
+      - {family: malheiros, names: [a9-72hetIUY]}
+    budgets: ["0.2n"]
+    algorithms: {B0_regret2: 1, B1_alns: 1}

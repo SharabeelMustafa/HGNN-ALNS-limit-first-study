@@ -1,0 +1,108 @@
+models:
+  hgnn:
+    lilim: models/lilim_hgnn.pt
+    hdarp: models/hdarp_hgnn.pt
+  homgnn:
+    lilim: models/lilim_homgnn.pt
+    hdarp: models/hdarp_homgnn.pt
+tune:
+  P_hgnn@K5_lam0.2:
+    by_family:
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 5
+          lam: 0.2
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 5
+          lam: 0.2
+  P_hgnn@K5_lam1.0:
+    by_family:
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 5
+          lam: 1.0
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 5
+          lam: 1.0
+  P_hgnn@K0.5_lam0.2:
+    by_family:
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 0.5
+          lam: 0.2
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 0.2
+  P_hgnn@K0.5_lam1.0:
+    by_family:
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 0.5
+          lam: 1.0
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 1.0
+  P_hgnn@K999_lam0.2:
+    by_family:
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.2
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 0.2
+  P_hgnn@K999_lam1.0:
+    by_family:
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 1.0
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 1.0
+blocks:
+- name: tuneB
+  instances:
+  - family: gen-lilim
+    size: valopt
+  - family: gen-hdarp
+    size: valopt
+  budgets:
+  - 0.25n
+  algorithms:
+    P_hgnn@K5_lam0.2: 1
+    P_hgnn@K5_lam1.0: 1
+    P_hgnn@K0.5_lam0.2: 1
+    P_hgnn@K0.5_lam1.0: 1
+    P_hgnn@K999_lam0.2: 1
+    P_hgnn@K999_lam1.0: 1

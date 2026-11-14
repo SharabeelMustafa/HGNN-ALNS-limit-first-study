@@ -1,0 +1,116 @@
+models:
+  hgnn:
+    lilim: models/lilim_hgnn.pt
+    hdarp: models/hdarp_hgnn.pt
+  homgnn:
+    lilim: models/lilim_homgnn.pt
+    hdarp: models/hdarp_homgnn.pt
+tune:
+  B1_alns: &id001
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+  REF_long: *id001
+  O_soft: &id002
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 0.2
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.2
+  C_shaw: *id002
+  O_oracle@prior:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 0.2
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.2
+        gnn_destroy: false
+  O_oracle@prior1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+  O_oracle@destroy:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 0.0
+        gnn_destroy: true
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 0.0
+        gnn_destroy: true
+  O_oracle@prune:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 0.5
+          lam: 0.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 0.5
+          lam: 0.0
+        gnn_destroy: false
+blocks:
+- name: e09_lilim
+  instances:
+  - family: gen-lilim
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_lilim.json
+  diag: true
+  algorithms: &id003
+    REF_long: 3
+- name: e09_hdarp
+  instances:
+  - family: gen-hdarp
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_hdarp.json
+  diag: true
+  algorithms: *id003

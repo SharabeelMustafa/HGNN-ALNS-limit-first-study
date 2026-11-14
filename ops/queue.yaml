@@ -1,0 +1,58 @@
+# Job queue of the research runner. Jobs run in this order; finished jobs are remembered in ops/state.json.
+# Fields: id, cmd ({workers} and {python} are filled in), note (goes to EXPERIMENT_LOG.md),
+#         after (command run once when the job has finished), gate (command; exit code 0 = run the job, else skip it).
+- id: E08a_pilot_headroom
+  cmd: bash ops/run_exp.sh configs/pilot_headroom.yaml results/pilot_headroom.jsonl {workers}
+  note: "headroom of perfect neighbourhood selection (best of m moves) on the tuning instances"
+- id: E08b_pilot_teacher_refs
+  cmd: bash ops/run_exp.sh configs/pilot_co1.yaml results/pilot_headroom.jsonl {workers}
+  note: "current method, static co-routing guide, self-consensus guide, and reference solutions of three qualities"
+- id: E08c_pilot_teacher_oracles
+  cmd: bash ops/run_exp.sh configs/pilot_co2.yaml results/pilot_headroom.jsonl {workers}
+  note: "oracle guides built from the 0.6x, 1x and 4x references (how good must the teacher be?)"
+  after: "./.venv/bin/python scripts/analyse_pilot.py > logs/pilot_analysis.log 2>&1 && ./.venv/bin/python scripts/make_results_md.py"
+- id: E09a_more_references
+  cmd: bash ops/run_exp.sh configs/pilot_e09a.yaml results/pilot_headroom.jsonl {workers}
+  note: "two more 4x reference runs per tuning instance (for a soft consensus of three long runs)"
+- id: E09b_usage_and_baselines
+  cmd: bash ops/run_exp.sh configs/pilot_e09b.yaml results/pilot_headroom.jsonl {workers}
+  note: "oracle used as prior only / destroy only / pruning only; soft consensus oracle; static relatedness guide (no learning)"
+  after: "./.venv/bin/python scripts/analyse_pilot.py > logs/pilot_analysis.log 2>&1 && ./.venv/bin/python scripts/make_results_md.py"
+- id: E10_set_partitioning
+  cmd: bash ops/run_exp.sh configs/pilot_e10.yaml results/pilot_headroom.jsonl {workers}
+  note: "classical ALNS + set partitioning over the route pool at the end (same iterations as classical ALNS)"
+  after: "./.venv/bin/python scripts/analyse_pilot.py > logs/pilot_analysis.log 2>&1 && ./.venv/bin/python scripts/make_results_md.py"
+- id: E11_instance_specific_configuration
+  cmd: bash ops/run_exp.sh configs/pilot_e11.yaml results/pilot_isac.jsonl {workers}
+  note: "six ALNS configurations (removal share x noise) x 3 seeds per tuning instance; iteration budgets equal to what each configuration reaches in the same time. Question: is the best configuration instance-specific (room for a learned per-instance configuration)?"
+- id: E12a_teachers_hdarp_train
+  cmd: ./.venv/bin/python scripts/make_teachers.py --family hdarp --split train --limit 300 --seeds 3 --mult 4 --workers {workers}
+  note: "teacher runs (3 runs with 4x iterations) for 300 H-DARP style training instances"
+- id: E12b_teachers_lilim_train
+  cmd: ./.venv/bin/python scripts/make_teachers.py --family lilim --split train --limit 300 --seeds 3 --mult 4 --workers {workers}
+  note: "teacher runs for 300 Li & Lim style training instances"
+- id: E12c_teachers_valml
+  cmd: ./.venv/bin/python scripts/make_teachers.py --family hdarp --split valml --limit 40 --seeds 3 --mult 4 --workers {workers} && ./.venv/bin/python scripts/make_teachers.py --family lilim --split valml --limit 40 --seeds 3 --mult 4 --workers {workers}
+  note: "teacher runs for 40 + 40 validation instances (early stopping)"
+- id: E13_train_co_models
+  cmd: bash ops/train_v2.sh
+  note: "train HGNN / homogeneous GNN / no-message-passing model on the long-run co-routing target; offline gate G3 in results/co_eval/v2.json"
+- id: E14_search_with_trained_models
+  cmd: bash ops/run_exp.sh configs/pilot_e14.yaml results/pilot_headroom.jsonl {workers}
+  note: "tuning instances, equal iterations: teacher-trained models as prior-only guide, against the consensus oracle and the free static-relatedness rule (gate G4)"
+  after: "./.venv/bin/python scripts/analyse_pilot.py > logs/pilot_analysis.log 2>&1 && ./.venv/bin/python scripts/make_results_md.py"
+- id: E16_benchmark_subset_oracle_and_model
+  cmd: bash ops/run_exp.sh configs/confirm_e16.yaml results/followup.jsonl {workers}
+  note: "36 benchmark instances, equal iterations, 3 seeds: oracle as prior only (lambda 1.0 and 0.2), and the teacher-trained HGNN as prior (lambda 0.2) as confirmation of the tuning-instance results"
+- id: E15_benchmark_set_partitioning
+  cmd: bash ops/run_exp.sh configs/confirm_e15.yaml results/followup.jsonl {workers}
+  note: "all 140 benchmark instances, 5 seeds, same iterations as classical ALNS: classical ALNS + set partitioning"
+- id: E17_benchmark_hint_and_set_partitioning
+  cmd: bash ops/run_exp.sh configs/final_e17.yaml results/followup.jsonl {workers}
+  note: "all 140 benchmark instances, 5 seeds, same iterations: teacher-trained HGNN as soft hint (lambda 0.2) with set partitioning at the end; the value before set partitioning is stored too, so one run gives the hint-only and the hint + set-partitioning result"
+- id: E18a_benchmark_references
+  cmd: bash ops/run_exp.sh configs/final_e18a.yaml results/followup.jsonl {workers}
+  note: "4x reference runs for the 104 benchmark instances that had none (for the oracle on all instances)"
+- id: E18b_benchmark_oracle_all
+  cmd: bash ops/run_exp.sh configs/final_e18b.yaml results/followup.jsonl {workers}
+  note: "oracle as soft hint (prior only, lambda 1.0) on all 140 benchmark instances, 3 seeds"

@@ -1,0 +1,42 @@
+models:
+  hgnn:
+    lilim: models/lilim_hgnn.pt
+    hdarp: models/hdarp_hgnn.pt
+  homgnn:
+    lilim: models/lilim_homgnn.pt
+    hdarp: models/hdarp_homgnn.pt
+tune:
+  B1_alns@xi0.2_eta0.0:
+    xi: 0.2
+    noise: 0.0
+  B1_alns@xi0.2_eta0.025:
+    xi: 0.2
+    noise: 0.025
+  B1_alns@xi0.2_eta0.05:
+    xi: 0.2
+    noise: 0.05
+  B1_alns@xi0.4_eta0.0:
+    xi: 0.4
+    noise: 0.0
+  B1_alns@xi0.4_eta0.025:
+    xi: 0.4
+    noise: 0.025
+  B1_alns@xi0.4_eta0.05:
+    xi: 0.4
+    noise: 0.05
+blocks:
+- name: tuneA
+  instances:
+  - family: gen-lilim
+    size: valopt
+  - family: gen-hdarp
+    size: valopt
+  budgets:
+  - 0.25n
+  algorithms:
+    B1_alns@xi0.2_eta0.0: 1
+    B1_alns@xi0.2_eta0.025: 1
+    B1_alns@xi0.2_eta0.05: 1
+    B1_alns@xi0.4_eta0.0: 1
+    B1_alns@xi0.4_eta0.025: 1
+    B1_alns@xi0.4_eta0.05: 1

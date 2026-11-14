@@ -1,0 +1,180 @@
+models:
+  hgnn:
+    lilim: models/lilim_hgnn.pt
+    hdarp: models/hdarp_hgnn.pt
+  homgnn:
+    lilim: models/lilim_homgnn.pt
+    hdarp: models/hdarp_homgnn.pt
+  co_hgnn:
+    lilim: models/v2/lilim_co_hgnn.pt
+    hdarp: models/v2/hdarp_co_hgnn.pt
+  co_hom:
+    lilim: models/v2/lilim_co_hom.pt
+    hdarp: models/v2/hdarp_co_hom.pt
+  co_mlp:
+    lilim: models/v2/lilim_co_mlp.pt
+    hdarp: models/v2/hdarp_co_mlp.pt
+tune:
+  B1_alns:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+  C2_co@hgnn_l1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          key: co_hgnn
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          key: co_hgnn
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+  C2_co@hgnn_l02:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          key: co_hgnn
+          K: 999
+          lam: 0.2
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          key: co_hgnn
+          K: 999
+          lam: 0.2
+        gnn_destroy: false
+  C2_co@hom_l1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          key: co_hom
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          key: co_hom
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+  C2_co@mlp_l1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          key: co_mlp
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          key: co_mlp
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+  C2_co@old_l1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          key: hgnn
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          key: hgnn
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+  O_soft@prior1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+  C_shaw@prior1:
+    by_family:
+      lilim:
+        xi: 0.4
+        noise: 0.025
+        guide:
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+      hdarp:
+        xi: 0.2
+        noise: 0.0
+        guide:
+          K: 999
+          lam: 1.0
+        gnn_destroy: false
+blocks:
+- name: e14_lilim
+  instances:
+  - family: gen-lilim
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_lilim.json
+  diag: true
+  algorithms:
+    C2_co@hgnn_l1: 2
+    C2_co@hgnn_l02: 2
+    C2_co@hom_l1: 2
+    C2_co@mlp_l1: 2
+    C2_co@old_l1: 2
+    O_soft@prior1: 2
+    C_shaw@prior1: 2
+- name: e14_hdarp
+  instances:
+  - family: gen-hdarp
+    size: valopt
+  budgets:
+  - 0.25n
+  iter_file: results/iter_budget_valopt_hdarp.json
+  diag: true
+  algorithms:
+    C2_co@hgnn_l1: 2
+    C2_co@hgnn_l02: 2
+    C2_co@hom_l1: 2
+    C2_co@mlp_l1: 2
+    C2_co@old_l1: 2
+    O_soft@prior1: 2
+    C_shaw@prior1: 2

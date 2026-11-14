@@ -1,0 +1,242 @@
+{
+"valopt_00006": {
+"B1_alns@xi0.2_eta0.05": 4635,
+"B1_alns@xi0.2_eta0.025": 6616,
+"B1_alns@xi0.4_eta0.05": 4312,
+"B1_alns@xi0.2_eta0.0": 4216,
+"B1_alns@xi0.4_eta0.025": 3750,
+"B1_alns@xi0.4_eta0.0": 4573
+},
+"valopt_00009": {
+"B1_alns@xi0.4_eta0.0": 2752,
+"B1_alns@xi0.4_eta0.05": 3086,
+"B1_alns@xi0.2_eta0.05": 3207,
+"B1_alns@xi0.2_eta0.025": 3287,
+"B1_alns@xi0.4_eta0.025": 3381,
+"B1_alns@xi0.2_eta0.0": 4029
+},
+"valopt_00010": {
+"B1_alns@xi0.4_eta0.05": 994,
+"B1_alns@xi0.4_eta0.025": 1080,
+"B1_alns@xi0.4_eta0.0": 1218,
+"B1_alns@xi0.2_eta0.0": 2383,
+"B1_alns@xi0.2_eta0.05": 2356,
+"B1_alns@xi0.2_eta0.025": 2749
+},
+"valopt_00004": {
+"B1_alns@xi0.2_eta0.0": 2061,
+"B1_alns@xi0.4_eta0.05": 1175,
+"B1_alns@xi0.4_eta0.025": 1033,
+"B1_alns@xi0.2_eta0.025": 2092,
+"B1_alns@xi0.4_eta0.0": 1618,
+"B1_alns@xi0.2_eta0.05": 3264
+},
+"valopt_00003": {
+"B1_alns@xi0.2_eta0.025": 1387,
+"B1_alns@xi0.4_eta0.0": 647,
+"B1_alns@xi0.4_eta0.05": 819,
+"B1_alns@xi0.2_eta0.05": 1561,
+"B1_alns@xi0.4_eta0.025": 548,
+"B1_alns@xi0.2_eta0.0": 1262
+},
+"valopt_00016": {
+"B1_alns@xi0.4_eta0.025": 978,
+"B1_alns@xi0.2_eta0.025": 1417,
+"B1_alns@xi0.2_eta0.0": 1988,
+"B1_alns@xi0.2_eta0.05": 1735,
+"B1_alns@xi0.4_eta0.0": 1165,
+"B1_alns@xi0.4_eta0.05": 958
+},
+"valopt_00008": {
+"B1_alns@xi0.4_eta0.025": 3981,
+"B1_alns@xi0.2_eta0.05": 6580,
+"B1_alns@xi0.2_eta0.0": 6826,
+"B1_alns@xi0.2_eta0.025": 4226,
+"B1_alns@xi0.4_eta0.0": 2543,
+"B1_alns@xi0.4_eta0.05": 2407
+},
+"valopt_00024": {
+"B1_alns@xi0.2_eta0.025": 1649,
+"B1_alns@xi0.4_eta0.0": 1020,
+"B1_alns@xi0.4_eta0.025": 603,
+"B1_alns@xi0.4_eta0.05": 596,
+"B1_alns@xi0.2_eta0.0": 1552,
+"B1_alns@xi0.2_eta0.05": 1222
+},
+"valopt_00011": {
+"B1_alns@xi0.2_eta0.025": 1911,
+"B1_alns@xi0.4_eta0.0": 1429,
+"B1_alns@xi0.2_eta0.0": 2387,
+"B1_alns@xi0.4_eta0.025": 952,
+"B1_alns@xi0.4_eta0.05": 1456,
+"B1_alns@xi0.2_eta0.05": 3084
+},
+"valopt_00000": {
+"B1_alns@xi0.2_eta0.0": 3195,
+"B1_alns@xi0.2_eta0.05": 2007,
+"B1_alns@xi0.4_eta0.025": 1046,
+"B1_alns@xi0.2_eta0.025": 3234,
+"B1_alns@xi0.4_eta0.05": 1396,
+"B1_alns@xi0.4_eta0.0": 1704
+},
+"valopt_00018": {
+"B1_alns@xi0.4_eta0.025": 1173,
+"B1_alns@xi0.2_eta0.025": 3237,
+"B1_alns@xi0.2_eta0.05": 2305,
+"B1_alns@xi0.4_eta0.0": 2040,
+"B1_alns@xi0.2_eta0.0": 3446,
+"B1_alns@xi0.4_eta0.05": 1154
+},
+"valopt_00022": {
+"B1_alns@xi0.4_eta0.0": 560,
+"B1_alns@xi0.2_eta0.025": 874,
+"B1_alns@xi0.2_eta0.0": 1280,
+"B1_alns@xi0.4_eta0.025": 649,
+"B1_alns@xi0.2_eta0.05": 1042,
+"B1_alns@xi0.4_eta0.05": 632
+},
+"valopt_00025": {
+"B1_alns@xi0.2_eta0.0": 2065,
+"B1_alns@xi0.4_eta0.0": 798,
+"B1_alns@xi0.2_eta0.05": 1500,
+"B1_alns@xi0.4_eta0.05": 806,
+"B1_alns@xi0.4_eta0.025": 1041,
+"B1_alns@xi0.2_eta0.025": 2116
+},
+"valopt_00021": {
+"B1_alns@xi0.2_eta0.025": 2433,
+"B1_alns@xi0.4_eta0.0": 1232,
+"B1_alns@xi0.4_eta0.025": 1709,
+"B1_alns@xi0.4_eta0.05": 915,
+"B1_alns@xi0.2_eta0.05": 1968,
+"B1_alns@xi0.2_eta0.0": 3041
+},
+"valopt_00012": {
+"B1_alns@xi0.4_eta0.0": 1791,
+"B1_alns@xi0.4_eta0.025": 2027,
+"B1_alns@xi0.2_eta0.05": 3266,
+"B1_alns@xi0.4_eta0.05": 2086,
+"B1_alns@xi0.2_eta0.025": 1919,
+"B1_alns@xi0.2_eta0.0": 2120
+},
+"valopt_00020": {
+"B1_alns@xi0.2_eta0.0": 1325,
+"B1_alns@xi0.2_eta0.05": 1275,
+"B1_alns@xi0.4_eta0.0": 621,
+"B1_alns@xi0.4_eta0.025": 758,
+"B1_alns@xi0.2_eta0.025": 1301,
+"B1_alns@xi0.4_eta0.05": 832
+},
+"valopt_00007": {
+"B1_alns@xi0.4_eta0.0": 2417,
+"B1_alns@xi0.2_eta0.025": 2726,
+"B1_alns@xi0.4_eta0.05": 2453,
+"B1_alns@xi0.2_eta0.0": 4250,
+"B1_alns@xi0.4_eta0.025": 2764,
+"B1_alns@xi0.2_eta0.05": 3690
+},
+"valopt_00014": {
+"B1_alns@xi0.4_eta0.025": 3067,
+"B1_alns@xi0.4_eta0.05": 3377,
+"B1_alns@xi0.4_eta0.0": 2226,
+"B1_alns@xi0.2_eta0.0": 5553,
+"B1_alns@xi0.2_eta0.025": 4057,
+"B1_alns@xi0.2_eta0.05": 4961
+},
+"valopt_00002": {
+"B1_alns@xi0.4_eta0.0": 1274,
+"B1_alns@xi0.4_eta0.025": 1852,
+"B1_alns@xi0.4_eta0.05": 1606,
+"B1_alns@xi0.2_eta0.0": 3285,
+"B1_alns@xi0.2_eta0.05": 3019,
+"B1_alns@xi0.2_eta0.025": 2073
+},
+"valopt_00026": {
+"B1_alns@xi0.2_eta0.025": 1798,
+"B1_alns@xi0.4_eta0.0": 831,
+"B1_alns@xi0.2_eta0.0": 1815,
+"B1_alns@xi0.2_eta0.05": 1215,
+"B1_alns@xi0.4_eta0.05": 876,
+"B1_alns@xi0.4_eta0.025": 599
+},
+"valopt_00019": {
+"B1_alns@xi0.4_eta0.05": 2205,
+"B1_alns@xi0.4_eta0.025": 1464,
+"B1_alns@xi0.2_eta0.05": 3870,
+"B1_alns@xi0.2_eta0.025": 3886,
+"B1_alns@xi0.4_eta0.0": 1534,
+"B1_alns@xi0.2_eta0.0": 3591
+},
+"valopt_00017": {
+"B1_alns@xi0.2_eta0.0": 5455,
+"B1_alns@xi0.4_eta0.025": 1779,
+"B1_alns@xi0.4_eta0.05": 1870,
+"B1_alns@xi0.4_eta0.0": 1915,
+"B1_alns@xi0.2_eta0.05": 5535,
+"B1_alns@xi0.2_eta0.025": 3421
+},
+"valopt_00001": {
+"B1_alns@xi0.2_eta0.05": 1657,
+"B1_alns@xi0.4_eta0.025": 953,
+"B1_alns@xi0.4_eta0.0": 1512,
+"B1_alns@xi0.2_eta0.0": 2447,
+"B1_alns@xi0.4_eta0.05": 1607,
+"B1_alns@xi0.2_eta0.025": 2421
+},
+"valopt_00015": {
+"B1_alns@xi0.4_eta0.025": 1626,
+"B1_alns@xi0.2_eta0.0": 2758,
+"B1_alns@xi0.4_eta0.05": 1119,
+"B1_alns@xi0.2_eta0.05": 2655,
+"B1_alns@xi0.2_eta0.025": 1815,
+"B1_alns@xi0.4_eta0.0": 1677
+},
+"valopt_00023": {
+"B1_alns@xi0.2_eta0.05": 2143,
+"B1_alns@xi0.4_eta0.025": 709,
+"B1_alns@xi0.4_eta0.05": 1170,
+"B1_alns@xi0.2_eta0.025": 1924,
+"B1_alns@xi0.4_eta0.0": 724,
+"B1_alns@xi0.2_eta0.0": 2182
+},
+"valopt_00013": {
+"B1_alns@xi0.4_eta0.025": 2140,
+"B1_alns@xi0.2_eta0.0": 4996,
+"B1_alns@xi0.4_eta0.05": 2141,
+"B1_alns@xi0.2_eta0.025": 3016,
+"B1_alns@xi0.2_eta0.05": 4651,
+"B1_alns@xi0.4_eta0.0": 2168
+},
+"valopt_00028": {
+"B1_alns@xi0.2_eta0.05": 872,
+"B1_alns@xi0.4_eta0.05": 335,
+"B1_alns@xi0.4_eta0.0": 431,
+"B1_alns@xi0.2_eta0.0": 1031,
+"B1_alns@xi0.4_eta0.025": 502,
+"B1_alns@xi0.2_eta0.025": 1384
+},
+"valopt_00005": {
+"B1_alns@xi0.2_eta0.025": 2286,
+"B1_alns@xi0.4_eta0.0": 977,
+"B1_alns@xi0.4_eta0.025": 1406,
+"B1_alns@xi0.4_eta0.05": 903,
+"B1_alns@xi0.2_eta0.0": 2124,
+"B1_alns@xi0.2_eta0.05": 2557
+},
+"valopt_00029": {
+"B1_alns@xi0.4_eta0.025": 783,
+"B1_alns@xi0.2_eta0.025": 954,
+"B1_alns@xi0.2_eta0.0": 1501,
+"B1_alns@xi0.4_eta0.05": 803,
+"B1_alns@xi0.2_eta0.05": 996,
+"B1_alns@xi0.4_eta0.0": 708
+},
+"valopt_00027": {
+"B1_alns@xi0.2_eta0.05": 1516,
+"B1_alns@xi0.2_eta0.0": 2173,
+"B1_alns@xi0.4_eta0.05": 779,
+"B1_alns@xi0.4_eta0.025": 604,
+"B1_alns@xi0.4_eta0.0": 983,
+"B1_alns@xi0.2_eta0.025": 2034
+}
+}
